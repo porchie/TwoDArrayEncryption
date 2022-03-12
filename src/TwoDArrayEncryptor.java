@@ -3,7 +3,6 @@ import java.util.Arrays;
 
 public class TwoDArrayEncryptor {
 
-   // private char[][] letterMatrix;
     private int rowShift;
     private int colShift;
     private String key;
@@ -96,52 +95,6 @@ public class TwoDArrayEncryptor {
             }
         }
         return str;
-    }
-
-
-
-    public static char caesar(char c, int shift)
-    {
-        if(c<=90 && c>=65)
-        {
-            return (char)(((int)c - 65 + shift) % 26 + 65);
-        }
-        else if(c<=122&& c>=97)
-        {
-            return (char)(((int)c - 97 + shift) % 26 + 97);
-        }
-        else
-        {
-            return c;
-        }
-    }
-
-
-    public static String caesar(String str, int shift)
-    {
-        String s = "";
-        char[] arr = str.toCharArray();
-        for (char c: arr)
-        {
-            if(c<=90 && c>=65)
-            {
-                s += (char)(((int)c - 65 + shift) % 26 + 65);
-            }
-            else if(c<=122&& c>=97)
-            {
-                s += (char)(((int)c - 97 + shift) % 26 + 97);
-            }
-            else
-            {
-                s += c;
-            }
-        }
-        return s;
-    }
-
-    public static String decryptCaesar(String str, int shift)
-    {
-        return caesar(str, 26-(shift%26));
     }
 
     public static String vigenere(String str, String key)
